@@ -1,4 +1,10 @@
 ﻿body {
+    font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+    color: #ccc;
+    font-weight: 300;
 }
 
 .content {
@@ -9,7 +15,6 @@
 }
 
     .content article {
-        height: 1500px;
         padding: 100px 0;
         max-width: 640px;
         margin: 0 auto;
@@ -60,4 +65,24 @@
     left: 50%;
     margin-left: -480px;
     top: 380px;
+}
+
+/*Clothes-pics Section*/
+
+.clothes{
+    max-width: 100%;
+    height: auto;
+}
+
+.img-item{
+    margin-top: 5px;
+    position: relative;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s ease-in-out
+}
+
+.is-showing{
+    opacity: 1;
+    transform: translateX(0px);
 }
