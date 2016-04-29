@@ -69,20 +69,39 @@ h1 {
 
 /*Clothes-pics Section*/
 
-.clothes{
+.clothes {
     max-width: 100%;
     height: auto;
 }
 
-.img-item{
+.img-item {
     margin-top: 5px;
     position: relative;
     opacity: 0;
     transform: translateX(-20px);
-    transition: all 0.3s ease-in-out
+    transition: all 0.3s ease-in-out;
 }
 
-.is-showing{
+.is-showing {
     opacity: 1;
     transform: translateX(0px);
+}
+
+/*Large-window section*/
+.large-window {
+    height: 640px;
+    background-image: url(../images/model2.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-top: 100px;
+    border-radius: 50%;
+}
+
+.large-window-text{
+    margin-top: 20px;
+    position: relative;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s ease-in-out;
 }
