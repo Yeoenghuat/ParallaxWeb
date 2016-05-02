@@ -69,23 +69,56 @@ h1 {
 
 /*Clothes-pics Section*/
 
+.clothes-pics {
+    margin-bottom: 100px;
+}
+
 .clothes {
     max-width: 100%;
     height: auto;
 }
 
-.img-item {
-    margin-top: 5px;
+figure {
+    margin-bottom: 20px;
     position: relative;
     opacity: 0;
     transform: translateX(-20px);
     transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    cursor: pointer;
 }
+
+    figure img {
+        display: block;
+        transform: scale(1);
+        transition: all 0.3s ease-in-out;
+    }
+
+        figure img:hover + figcaption {
+            left: 0%;
+        }
+
+        figure img:hover {
+            transform: scale(1.1);
+        }
 
 .is-showing {
     opacity: 1;
     transform: translateX(0px);
 }
+
+.clothes-pics figcaption {
+    position: absolute;
+    bottom: 20px;
+    left: -100%;
+    background: black;
+    color: white;
+    padding: 4px 10px;
+    font-size: 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+
 
 /*Large-window section*/
 .large-window {
@@ -98,7 +131,7 @@ h1 {
     border-radius: 50%;
 }
 
-.large-window-text{
+.large-window-text {
     margin-top: 20px;
     position: relative;
     opacity: 0;
