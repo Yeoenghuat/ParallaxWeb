@@ -27,4 +27,16 @@ $(window).scroll(function (event) {
             'transform': 'translateX(0px)'
         });
     };
+
+    if (scrollVal > $('.large-window').offset().top - $(window).height()) {
+        $('.large-window').css({
+            'background-position': 'center ' + (scrollVal - $('.large-window').offset().top) + 'px'
+        });
+
+        var opacity = (scrollVal - $('.large-window').offset().top + 400) / (scrollVal / 5);
+
+        $('.window-tint').css({
+            'opacity': opacity
+        });
+    }
 })
