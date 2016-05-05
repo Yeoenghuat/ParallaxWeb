@@ -1,17 +1,19 @@
-﻿var pContainerHeight = $('.bird-box').height();
+﻿var pContainerHeight = $('.bird-box').height(); // For optimazation (To stop processing the bird-box area once it is out of the screen)
 
 $(window).scroll(function (event) {
     var scrollVal = $(window).scrollTop();
-    $('.logo').css({
-        'transform': 'translate(0px, ' + scrollVal / 2 + '%)'
-    });
-    $('.back-bird').css({
-        'transform': 'translate(0px, ' + scrollVal / 4 + '%)'
-    });
-    $('.fore-bird').css({
-        'transform': 'translate(0px, -' + scrollVal / 40 + '%)'
-    });
 
+    if (scrollVal <= pContainerHeight) {
+        $('.logo').css({
+            'transform': 'translate(0px, ' + scrollVal / 2 + '%)'
+        });
+        $('.back-bird').css({
+            'transform': 'translate(0px, ' + scrollVal / 4 + '%)'
+        });
+        $('.fore-bird').css({
+            'transform': 'translate(0px, -' + scrollVal / 40 + '%)'
+        });
+    }
     //console.log(scrollVal + ' ' + $('.clothes-pics').offset().top + ' ' + $(window).height() / 1.1);
     if (scrollVal > $('.clothes-pics').offset().top - ($(window).height() / 1.1)) { //set the class when scroll 10% of the screen
         $('.clothes-pics figure').each(function (i) {
@@ -46,7 +48,7 @@ $(window).scroll(function (event) {
         $('.category-item-1').css({
             'transform': 'translate(' + offset + 'px, ' + Math.abs(offset * 0.2) + 'px)'
         });
-        console.log(offset);
+
         $('.category-item-2').css({
             'transform': 'translate(0px, ' + Math.abs(offset) + 'px)'
         });
